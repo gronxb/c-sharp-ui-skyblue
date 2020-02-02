@@ -51,7 +51,7 @@ namespace c_sharp_ui
 
             this.btn = new StyleButton(10,435,378,60);
             this.btn.Caption = "LOGIN";
-
+	    this.btn.Click += this.btn_Click;
 
          
             this.Controls.Add(this.id_box);
@@ -59,6 +59,11 @@ namespace c_sharp_ui
             this.Controls.Add(this.btn);
             this.Paint += this.Form1_Paint;
         }
+
+	private void btn_Click(object sender,EventArgs e)
+	{
+		MessageBox.Show(String.Format("[{0}] Hello!!",this.id_box.GetText()));
+	}
 
         private void Form1_Paint(object sender,PaintEventArgs e)
         {
